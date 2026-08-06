@@ -16,7 +16,7 @@ jobs:
   check:
     strategy:
       matrix:
-        node: [20, 22, 24]
+        node: [22, 24]
     runs-on: blacksmith-2vcpu-ubuntu-2404-arm
     timeout-minutes: 5
     steps:
@@ -33,3 +33,12 @@ jobs:
         run: npm run check
       - name: Inspect package contents
         run: npm run pack:dry-run
+      - name: Install CLI dependencies
+        run: npm ci
+        working-directory: cli
+      - name: Check CLI
+        run: npm run check
+        working-directory: cli
+      - name: Inspect CLI package contents
+        run: npm run pack:dry-run
+        working-directory: cli
