@@ -2,13 +2,17 @@
 
 Server-side JavaScript and TypeScript client for the Heyrafiki API.
 
+> Beta: use sandbox projects while the first stable release is prepared.
+
 ## Install
 
 ```bash
-npm install @heyrafiki/heyrafiki-js
+npm install @heyrafiki/heyrafiki-js@beta
 ```
 
-Node.js 20 or newer is required. Keep API keys on the server.
+Node.js 22 or newer is required. Keep API keys on the server.
+
+Prefer the command line? Run `npx @heyrafiki/cli@beta doctor` to verify a local setup.
 
 ## First request
 
@@ -101,3 +105,7 @@ npm run pack:dry-run
 - [API contract](https://github.com/heyrafiki/openapi)
 - [Webhooks](https://docs.heyrafiki.space/webhooks)
 - [Security](https://github.com/heyrafiki/.github/blob/main/SECURITY.md)
+
+## License
+
+Licensed under the [Apache License 2.0](./LICENSE).

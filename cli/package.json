@@ -1,0 +1,48 @@
+{
+  "name": "@heyrafiki/cli",
+  "version": "0.1.0-beta.1",
+  "description": "Command-line tools for the Heyrafiki API.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "bin": {
+    "heyrafiki": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsx --test src/*.test.ts",
+    "check": "npm run build && npm test",
+    "pack:dry-run": "npm pack --dry-run --json",
+    "prepack": "npm run check"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyrafiki/heyrafiki-js.git",
+    "directory": "cli"
+  },
+  "bugs": {
+    "url": "https://github.com/heyrafiki/heyrafiki-js/issues"
+  },
+  "homepage": "https://docs.heyrafiki.space/sdks",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "heyrafiki",
+    "healthcare",
+    "insurance",
+    "cli"
+  ],
+  "devDependencies": {
+    "@types/node": "22.18.0",
+    "tsx": "4.23.8",
+    "typescript": "5.9.3"
+  }
+}

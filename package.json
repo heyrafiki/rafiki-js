@@ -1,9 +1,9 @@
 {
   "name": "@heyrafiki/heyrafiki-js",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.0-beta.1",
   "type": "module",
   "description": "Server-side JavaScript and TypeScript client for the Heyrafiki API.",
+  "license": "Apache-2.0",
   "sideEffects": false,
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -17,7 +17,8 @@
   "files": [
     "dist",
     "README.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
@@ -29,7 +30,10 @@
     "prepack": "npm run check"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -46,7 +50,7 @@
     "mental-health"
   ],
   "devDependencies": {
-    "@types/node": "20.19.43",
+    "@types/node": "22.18.0",
     "tsx": "4.23.8",
     "typescript": "5.9.3"
   }
