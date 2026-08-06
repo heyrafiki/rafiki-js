@@ -1,0 +1,48 @@
+{
+  "object": "coverage_batch_result",
+  "batch_reference": "batch:jubilee:2026-08-04:001",
+  "artifact_sha256": "a5f162a2b55fb83d604fa4b54e749ebf274f4bffea5e2c486b17710f37e9fa93",
+  "total": 2,
+  "recorded": 2,
+  "replayed": 0,
+  "observations": [
+    {
+      "id": "cobs_demo_jubilee_001",
+      "object": "coverage_observation",
+      "coverage_id": "cov_demo_jubilee_001",
+      "source": "batch_file",
+      "source_contract_reference": "contract:jubilee:2026",
+      "external_coverage_reference": "coverage:jubilee:001",
+      "source_version": "14",
+      "snapshot_version": 1,
+      "status": "active",
+      "service_code": "psychotherapy-60",
+      "amount_limit": { "currency": "KES", "value": 600000 },
+      "remaining_sessions": 12,
+      "authorization_required": true,
+      "coordination_priority": 1,
+      "valid_from": "2026-01-01T00:00:00.000Z",
+      "valid_until": "2026-12-31T23:59:59.000Z",
+      "observed_at": "2026-08-04T09:00:00.000Z"
+    },
+    {
+      "id": "cobs_demo_jubilee_002",
+      "object": "coverage_observation",
+      "coverage_id": "cov_demo_jubilee_002",
+      "source": "batch_file",
+      "source_contract_reference": "contract:jubilee:2026",
+      "external_coverage_reference": "coverage:jubilee:002",
+      "source_version": "7",
+      "snapshot_version": 1,
+      "status": "active",
+      "service_code": "psychiatry-review",
+      "amount_limit": { "currency": "KES", "value": 850000 },
+      "remaining_sessions": 4,
+      "authorization_required": true,
+      "coordination_priority": null,
+      "valid_from": "2026-01-01T00:00:00.000Z",
+      "valid_until": "2026-12-31T23:59:59.000Z",
+      "observed_at": "2026-08-04T09:00:00.000Z"
+    }
+  ]
+}

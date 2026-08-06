@@ -1,0 +1,20 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "prc_2481",
+      "object": "practitioner",
+      "name": "Emily Makena",
+      "profession": "Clinical Psychologist",
+      "location": {
+        "city": "Nairobi",
+        "country": "Kenya"
+      },
+      "session_fee": {
+        "amount": 350000,
+        "currency": "KES"
+      }
+    }
+  ],
+  "has_more": false
+}

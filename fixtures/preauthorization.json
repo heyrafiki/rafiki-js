@@ -1,0 +1,16 @@
+{
+  "id": "preauth_demo_jubilee_001",
+  "object": "preauthorization",
+  "eligibility_check_id": "elig_demo_jubilee_001",
+  "booking_id": "bkg_demo_jubilee_001",
+  "status": "pending",
+  "reason_codes": ["review_required"],
+  "amount": {
+    "requested": 380000,
+    "approved": null,
+    "currency": "KES"
+  },
+  "valid_until": null,
+  "created_at": "2026-07-30T09:01:00.000Z",
+  "decision": null
+}

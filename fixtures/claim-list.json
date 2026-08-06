@@ -1,0 +1,29 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "clm_demo_jubilee_001",
+      "object": "claim",
+      "status": "submitted",
+      "provider_claim_reference": null,
+      "submission_version": 1,
+      "amount": {
+        "currency": "KES",
+        "billed": 380000,
+        "approved": null,
+        "remitted": null,
+        "settled": null
+      },
+      "service_period": {
+        "starts_at": "2026-07-20T05:00:00.000Z",
+        "ends_at": "2026-07-20T05:50:00.000Z"
+      },
+      "lines": [],
+      "information_requests": [],
+      "adjudication": null,
+      "submitted_at": "2026-07-20T06:00:00.000Z",
+      "updated_at": "2026-07-20T06:00:00.000Z"
+    }
+  ],
+  "has_more": false
+}

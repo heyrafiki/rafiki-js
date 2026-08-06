@@ -1,0 +1,19 @@
+{
+  "id": "elig_demo_jubilee_001",
+  "object": "eligibility_check",
+  "status": "eligible",
+  "reason_codes": ["eligible"],
+  "service": {
+    "code": "psychotherapy-60",
+    "scheduled_at": "2026-08-02T07:00:00.000Z"
+  },
+  "amount": {
+    "requested": 380000,
+    "currency": "KES",
+    "maximum_per_session": 600000
+  },
+  "authorization_required": true,
+  "remaining_sessions": 6,
+  "coverage_valid_until": "2027-01-01T00:00:00.000Z",
+  "checked_at": "2026-07-30T09:00:00.000Z"
+}

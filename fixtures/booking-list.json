@@ -1,0 +1,18 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "bkg_demo_jubilee_001",
+      "object": "booking",
+      "session_id": "ses_demo_jubilee_001",
+      "practitioner_id": "prc_2481",
+      "starts_at": "2026-08-02T07:00:00.000Z",
+      "ends_at": "2026-08-02T08:00:00.000Z",
+      "timezone": "Africa/Nairobi",
+      "format": "online",
+      "status": "confirmed",
+      "payment_source": "covered"
+    }
+  ],
+  "has_more": false
+}

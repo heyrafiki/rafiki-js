@@ -1,0 +1,41 @@
+{
+  "contract_version": "2026-08-01",
+  "batch_reference": "batch:jubilee:2026-08-04:001",
+  "batch_version": "1",
+  "source_contract_reference": "contract:jubilee:2026",
+  "generated_at": "2026-08-04T09:00:00.000Z",
+  "records": [
+    {
+      "coverage_reference": "coverage:jubilee:001",
+      "record_version": "14",
+      "tenant_reference": "tenant:acme:001",
+      "member_reference": "member:opaque:001",
+      "plan_name": "Essential Care",
+      "service_code": "psychotherapy-60",
+      "status": "active",
+      "currency": "KES",
+      "amount_limit": 600000,
+      "remaining_sessions": 12,
+      "authorization_required": true,
+      "coordination_priority": 1,
+      "valid_from": "2026-01-01T00:00:00.000Z",
+      "valid_until": "2026-12-31T23:59:59.000Z"
+    },
+    {
+      "coverage_reference": "coverage:jubilee:002",
+      "record_version": "7",
+      "tenant_reference": "tenant:acme:001",
+      "member_reference": "member:opaque:002",
+      "plan_name": "Essential Care",
+      "service_code": "psychiatry-review",
+      "status": "active",
+      "currency": "KES",
+      "amount_limit": 850000,
+      "remaining_sessions": 4,
+      "authorization_required": true,
+      "coordination_priority": null,
+      "valid_from": "2026-01-01T00:00:00.000Z",
+      "valid_until": "2026-12-31T23:59:59.000Z"
+    }
+  ]
+}

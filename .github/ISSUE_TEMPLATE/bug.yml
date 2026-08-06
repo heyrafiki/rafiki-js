@@ -1,0 +1,33 @@
+name: Bug report
+description: Report incorrect SDK behavior.
+title: "Bug: "
+body:
+  - type: markdown
+    attributes:
+      value: Use synthetic data. Do not include API keys, personal data or health information.
+  - type: input
+    id: version
+    attributes:
+      label: SDK version
+    validations:
+      required: true
+  - type: input
+    id: runtime
+    attributes:
+      label: Runtime
+      description: Node.js version and operating system.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include the smallest synthetic example that shows the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
