@@ -1,0 +1,53 @@
+{
+  "name": "@heyrafiki/heyrafiki-js",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Server-side JavaScript and TypeScript client for the Heyrafiki API.",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "tsx --test client.test.ts",
+    "test:boundary": "node scripts/check-public-boundary.mjs",
+    "test:example": "tsc --noEmit --target ES2022 --lib ES2022,DOM,DOM.Iterable --module NodeNext --moduleResolution NodeNext examples/covered-care.ts",
+    "check": "npm run build && npm test && npm run test:boundary && npm run test:example",
+    "pack:dry-run": "npm pack --dry-run --json",
+    "prepack": "npm run check"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyrafiki/heyrafiki-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heyrafiki/heyrafiki-js/issues"
+  },
+  "homepage": "https://docs.heyrafiki.space/sdks",
+  "keywords": [
+    "heyrafiki",
+    "healthcare",
+    "insurance",
+    "mental-health"
+  ],
+  "devDependencies": {
+    "@types/node": "20.19.43",
+    "tsx": "4.23.1",
+    "typescript": "5.9.3"
+  }
+}

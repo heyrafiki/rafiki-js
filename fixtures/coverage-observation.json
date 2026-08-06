@@ -1,0 +1,22 @@
+{
+  "id": "cobs_demo_jubilee_001",
+  "object": "coverage_observation",
+  "coverage_id": "cov_demo_jubilee_001",
+  "source": "payer_api",
+  "source_contract_reference": "contract:jubilee:2026",
+  "external_coverage_reference": "coverage:jubilee:001",
+  "source_version": "2026-08-04T09:00:00Z",
+  "snapshot_version": 1,
+  "status": "active",
+  "service_code": "psychotherapy-60",
+  "amount_limit": {
+    "currency": "KES",
+    "value": 600000
+  },
+  "remaining_sessions": 12,
+  "authorization_required": true,
+  "coordination_priority": 1,
+  "valid_from": "2026-01-01T00:00:00.000Z",
+  "valid_until": "2026-12-31T23:59:59.000Z",
+  "observed_at": "2026-08-04T09:00:00.000Z"
+}

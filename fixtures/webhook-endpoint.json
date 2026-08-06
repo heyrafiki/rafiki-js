@@ -1,0 +1,9 @@
+{
+  "id": "whe_demo_001234567890",
+  "object": "webhook_endpoint",
+  "url": "https://hooks.example.com/heyrafiki",
+  "events": ["sandbox.ping"],
+  "status": "active",
+  "created_at": "2026-07-30T09:00:00.000Z",
+  "disabled_at": null
+}

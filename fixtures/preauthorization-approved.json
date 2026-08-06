@@ -1,0 +1,33 @@
+{
+  "id": "preauth_demo_jubilee_001",
+  "object": "preauthorization",
+  "eligibility_check_id": "elig_demo_jubilee_001",
+  "booking_id": "bkg_demo_jubilee_001",
+  "status": "approved",
+  "reason_codes": ["covered"],
+  "amount": {
+    "requested": 380000,
+    "approved": 380000,
+    "currency": "KES"
+  },
+  "valid_until": "2026-08-03T07:00:00.000Z",
+  "created_at": "2026-07-30T09:01:00.000Z",
+  "decision": {
+    "id": "pad_demo_jubilee_001",
+    "object": "preauthorization_decision",
+    "version": 1,
+    "outcome": "approved",
+    "reason_codes": ["covered"],
+    "policy": {
+      "reference": "policy_demo_jubilee_2026",
+      "version": "2026-01"
+    },
+    "authority_reference": "jubilee-ke-demo",
+    "evidence_references": [
+      "eligibility:elig_demo_jubilee_001",
+      "booking:bkg_demo_jubilee_001",
+      "coverage:benefit_jubilee_2026:v4"
+    ],
+    "decided_at": "2026-07-30T09:05:00.000Z"
+  }
+}
