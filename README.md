@@ -30,12 +30,19 @@ Check a Benefit, create the covered Booking and request authorization with a
 caller-owned idempotency key for each write.
 
 ```ts
+const startsAt = new Date(Date.now() + 24 * 60 * 60 * 1000);
+startsAt.setUTCHours(7, 0, 0, 0);
+while ([0, 6].includes(startsAt.getUTCDay())) {
+  startsAt.setUTCDate(startsAt.getUTCDate() + 1);
+}
+const endsAt = new Date(startsAt.getTime() + 60 * 60 * 1000);
+
 const eligibility = await heyrafiki.eligibilityChecks.create(
   {
     member_reference: "member_demo_jubilee_001",
     service_code: "psychotherapy-60",
-    scheduled_at: "2026-08-05T07:00:00.000Z",
-    amount: 380000,
+    scheduled_at: startsAt.toISOString(),
+    amount: 350000,
     currency: "KES",
   },
   { idempotencyKey: crypto.randomUUID() },
@@ -44,8 +51,8 @@ const eligibility = await heyrafiki.eligibilityChecks.create(
 const booking = await heyrafiki.bookings.create(
   {
     practitioner_id: "prc_2481",
-    starts_at: "2026-08-05T07:00:00.000Z",
-    ends_at: "2026-08-05T08:00:00.000Z",
+    starts_at: startsAt.toISOString(),
+    ends_at: endsAt.toISOString(),
     format: "online",
     payment_source: "covered",
   },
@@ -61,7 +68,7 @@ await heyrafiki.preauthorizations.create(
 );
 ```
 
-Amounts use the currency's minor unit. `380000` KES is KES 3,800.00.
+Amounts use the currency's minor unit. `350000` KES is KES 3,500.00.
 
 ## Errors
 
