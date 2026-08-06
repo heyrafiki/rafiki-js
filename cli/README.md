@@ -2,7 +2,7 @@
 
 Command-line access to the Heyrafiki API.
 
-> Beta: use a sandbox project while the command surface settles.
+> Beta. Use with Sandbox projects.
 
 ## Run
 
@@ -16,7 +16,7 @@ Set `HEYRAFIKI_API_KEY`, then make a read request:
 npx @heyrafiki/cli@beta get /practitioners?limit=5
 ```
 
-The Beta CLI supports read requests only. Use the JavaScript SDK or REST API for writes so idempotency and approval rules stay explicit.
+The Beta CLI supports read requests. For write operations, use the JavaScript SDK or REST API.
 
 ## License
 

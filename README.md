@@ -2,7 +2,7 @@
 
 Server-side JavaScript and TypeScript client for the Heyrafiki API.
 
-> Beta: use sandbox projects while the first stable release is prepared.
+> Beta. Use with Sandbox projects.
 
 ## Install
 
