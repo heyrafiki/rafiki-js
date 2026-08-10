@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Added `claims.valuation()` for reproducible bitemporal Claim state and
+  outstanding liability at an explicit cutoff.
+
 ## 0.1.0-beta.1 - 2026-08-06
 
 - Added typed clients for Practitioners, Bookings, Sessions, Benefits, Claims,

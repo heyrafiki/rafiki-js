@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import claimListFixture from "./fixtures/claim-list.json";
+import claimValuationFixture from "./fixtures/claim-valuation.json";
 import coverageObservationFixture from "./fixtures/coverage-observation.json";
 import coverageBatchFixture from "./fixtures/coverage-batch.json";
 import coverageBatchResponseFixture from "./fixtures/coverage-batch-response.json";
@@ -81,6 +82,29 @@ test("keeps Session and Claim clients aligned with shared fixtures", async () =>
 
   assert.deepEqual(await client.sessions.list(), sessionListFixture);
   assert.deepEqual(await client.claims.list(), claimListFixture);
+});
+
+test("requests a Claim valuation with an explicit knowledge cutoff", async () => {
+  const requests: Request[] = [];
+  const client = new Heyrafiki({
+    apiKey: "test_api_key",
+    fetch: async (input, init) => {
+      requests.push(new Request(input, init));
+      return Response.json(claimValuationFixture);
+    },
+  });
+
+  assert.deepEqual(
+    await client.claims.valuation("clm_synthetic_payer_001", {
+      valuationAt: "2026-07-31T23:59:59.000Z",
+    }),
+    claimValuationFixture,
+  );
+  assert.equal(
+    requests[0]?.url,
+    "https://api.heyrafiki.space/v1/claims/clm_synthetic_payer_001/valuation?valuation_at=2026-07-31T23%3A59%3A59.000Z",
+  );
+  assert.equal(requests[0]?.method, "GET");
 });
 
 test("submits and adjudicates Claims with caller-owned idempotency keys", async () => {

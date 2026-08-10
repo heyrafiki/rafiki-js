@@ -1,0 +1,63 @@
+{
+  "id": "clm_synthetic_payer_001:2026-07-31T23:59:59.000Z",
+  "object": "claim_valuation",
+  "claim_id": "clm_synthetic_payer_001",
+  "valuation_at": "2026-07-31T23:59:59.000Z",
+  "currency": "KES",
+  "status": "partially_approved",
+  "amount": {
+    "billed": 600000,
+    "payer_liability": 450000,
+    "patient_responsibility": 50000,
+    "adjustment": 100000,
+    "remitted": 350000,
+    "settled": 350000,
+    "outstanding": 100000
+  },
+  "policy": {
+    "reference": "policy:mental-health:001",
+    "version": "2026-01"
+  },
+  "events": [
+    {
+      "sequence": 1,
+      "type": "submitted",
+      "effective_at": "2026-07-09T08:05:00.000Z",
+      "recorded_at": "2026-07-09T08:05:01.000Z",
+      "previous_status": "draft",
+      "next_status": "submitted",
+      "reason_code": null,
+      "evidence_references": ["care-attestation:001"]
+    },
+    {
+      "sequence": 2,
+      "type": "partially_approved",
+      "effective_at": "2026-07-14T10:00:00.000Z",
+      "recorded_at": "2026-07-14T10:00:01.000Z",
+      "previous_status": "submitted",
+      "next_status": "partially_approved",
+      "reason_code": "covered_with_cost_share",
+      "evidence_references": ["policy:mental-health:001:2026-01"]
+    },
+    {
+      "sequence": 3,
+      "type": "remittance_recorded",
+      "effective_at": "2026-07-21T11:00:00.000Z",
+      "recorded_at": "2026-07-21T11:00:01.000Z",
+      "previous_status": "partially_approved",
+      "next_status": "partially_approved",
+      "reason_code": "paid",
+      "evidence_references": ["remittance:demo:001"]
+    },
+    {
+      "sequence": 4,
+      "type": "settled",
+      "effective_at": "2026-07-23T12:00:00.000Z",
+      "recorded_at": "2026-07-23T12:00:01.000Z",
+      "previous_status": "partially_approved",
+      "next_status": "partially_approved",
+      "reason_code": "settlement_matched",
+      "evidence_references": ["settlement:demo:001"]
+    }
+  ]
+}
