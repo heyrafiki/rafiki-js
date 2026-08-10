@@ -189,6 +189,49 @@ export type ClaimList = {
   has_more: boolean;
 };
 
+export type ClaimValuation = {
+  id: string;
+  object: "claim_valuation";
+  claim_id: string;
+  valuation_at: string;
+  currency: string;
+  status: Claim["status"];
+  amount: {
+    billed: number;
+    payer_liability: number | null;
+    patient_responsibility: number | null;
+    adjustment: number | null;
+    remitted: number;
+    settled: number;
+    outstanding: number | null;
+  };
+  policy: { reference: string; version: string } | null;
+  events: Array<{
+    sequence: number;
+    type:
+      | "created"
+      | "validated"
+      | "submitted"
+      | "queried"
+      | "evidence_added"
+      | "resubmitted"
+      | "approved"
+      | "partially_approved"
+      | "denied"
+      | "remittance_recorded"
+      | "settled"
+      | "reconciled"
+      | "reversed"
+      | "cancelled";
+    effective_at: string;
+    recorded_at: string;
+    previous_status: Claim["status"] | null;
+    next_status: Claim["status"] | null;
+    reason_code: string | null;
+    evidence_references: string[];
+  }>;
+};
+
 export type EligibilityCheck = {
   id: string;
   object: "eligibility_check";
@@ -545,6 +588,12 @@ export class Heyrafiki {
     },
     retrieve: (claimId: string) =>
       this.request<Claim>(`/claims/${encodeURIComponent(claimId)}`),
+    valuation: (claimId: string, options: { valuationAt: string }) => {
+      const search = new URLSearchParams({ valuation_at: options.valuationAt });
+      return this.request<ClaimValuation>(
+        `/claims/${encodeURIComponent(claimId)}/valuation?${search.toString()}`,
+      );
+    },
     create: (input: CreateClaimInput, options: { idempotencyKey: string }) =>
       this.request<Claim>("/claims", {
         method: "POST",

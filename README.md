@@ -74,6 +74,23 @@ await heyrafiki.preauthorizations.create(
 
 Amounts use the currency's minor unit. `350000` KES is KES 3,500.00.
 
+## Reproduce a Claim valuation
+
+Use an explicit cutoff to retrieve only the Claim facts that had taken effect
+and entered system knowledge by that time.
+
+```ts
+const valuation = await heyrafiki.claims.valuation(
+  "clm_synthetic_payer_001",
+  { valuationAt: "2026-07-31T23:59:59.000Z" },
+);
+
+console.log(valuation.amount.outstanding);
+```
+
+Remittance remains payer advice. `settled` reflects independently observed
+money movement, and `outstanding` is payer liability less that settlement.
+
 ## Errors
 
 ```ts
@@ -103,6 +120,7 @@ npm run pack:dry-run
 
 - [Documentation](https://docs.heyrafiki.space)
 - [API contract](https://github.com/heyrafiki/openapi)
+- [Open insurance assurance benchmark](https://github.com/heyrafiki/openapi/blob/main/BENCHMARK.md)
 - [Webhooks](https://docs.heyrafiki.space/webhooks)
 - [Security](https://github.com/heyrafiki/.github/blob/main/SECURITY.md)
 
