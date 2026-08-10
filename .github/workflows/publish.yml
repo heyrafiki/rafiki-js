@@ -8,8 +8,8 @@ permissions:
   contents: read
 
 jobs:
-  sdk:
-    if: startsWith(github.event.release.tag_name, 'sdk-v')
+  publish:
+    if: startsWith(github.event.release.tag_name, 'v')
     runs-on: ubuntu-24.04
     environment: npm
     permissions:
@@ -25,37 +25,7 @@ jobs:
           registry-url: https://registry.npmjs.org
           package-manager-cache: false
       - name: Verify release tag
-        run: node -e "const p=require('./package.json');if(process.env.GITHUB_REF_NAME!=='sdk-v'+p.version)process.exit(1)"
-      - name: Install dependencies
-        run: npm ci
-      - name: Check package
-        run: npm run check
-      - name: Publish package
-        run: npm publish --tag "$NPM_TAG"
-        env:
-          NPM_TAG: ${{ github.event.release.prerelease && 'beta' || 'latest' }}
-
-  cli:
-    if: startsWith(github.event.release.tag_name, 'cli-v')
-    runs-on: ubuntu-24.04
-    environment: npm
-    permissions:
-      contents: read
-      id-token: write
-    defaults:
-      run:
-        working-directory: cli
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Use Node.js 24
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version: 24
-          registry-url: https://registry.npmjs.org
-          package-manager-cache: false
-      - name: Verify release tag
-        run: node -e "const p=require('./package.json');if(process.env.GITHUB_REF_NAME!=='cli-v'+p.version)process.exit(1)"
+        run: node -e "const p=require('./package.json');if(process.env.GITHUB_REF_NAME!=='v'+p.version)process.exit(1)"
       - name: Install dependencies
         run: npm ci
       - name: Check package

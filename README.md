@@ -2,22 +2,26 @@
 
 Server-side JavaScript and TypeScript client for the Heyrafiki API.
 
-> Beta. Use with Sandbox projects.
-
-## Install
+## Build from source
 
 ```bash
-npm install @heyrafiki/heyrafiki-js@beta
+git clone https://github.com/heyrafiki/rafiki-js.git
+cd rafiki-js
+npm ci
+npm run check
 ```
 
-Node.js 22 or newer is required. Keep API keys on the server.
+Node.js 22 or newer is required. The client connects to Sandbox projects with
+the same typed contract, idempotency behavior and request evidence used by the
+public REST API. Keep API keys on the server.
 
-Prefer the command line? Run `npx @heyrafiki/cli@beta doctor` to verify a local setup.
+Prefer the command line? Build [`hey`](https://github.com/heyrafiki/hey) and run
+`hey doctor` to verify a local setup.
 
 ## First request
 
 ```ts
-import { Heyrafiki } from "@heyrafiki/heyrafiki-js";
+import { Heyrafiki } from "@heyrafiki/rafiki-js";
 
 const heyrafiki = new Heyrafiki({
   apiKey: process.env.HEYRAFIKI_API_KEY!,
@@ -94,7 +98,7 @@ money movement, and `outstanding` is payer liability less that settlement.
 ## Errors
 
 ```ts
-import { HeyrafikiApiError } from "@heyrafiki/heyrafiki-js";
+import { HeyrafikiApiError } from "@heyrafiki/rafiki-js";
 
 try {
   await heyrafiki.claims.retrieve("clm_123");
@@ -119,8 +123,8 @@ npm run pack:dry-run
 ## Resources
 
 - [Documentation](https://docs.heyrafiki.space)
-- [API contract](https://github.com/heyrafiki/openapi)
-- [Open insurance assurance benchmark](https://github.com/heyrafiki/openapi/blob/main/BENCHMARK.md)
+- [API contract](https://github.com/heyrafiki/contract)
+- [Open insurance assurance benchmark](https://github.com/heyrafiki/proving-ground)
 - [Webhooks](https://docs.heyrafiki.space/webhooks)
 - [Security](https://github.com/heyrafiki/.github/blob/main/SECURITY.md)
 
