@@ -1,4 +1,4 @@
-import { Heyrafiki } from "@heyrafiki/heyrafiki-js";
+import { Heyrafiki } from "@heyrafiki/rafiki-js";
 
 const apiKey = process.env.HEYRAFIKI_API_KEY;
 if (!apiKey) throw new Error("HEYRAFIKI_API_KEY is required");

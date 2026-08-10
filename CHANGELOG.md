@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## Contract 1.0 additions - 2026-08-10
 
 - Added `claims.valuation()` for reproducible bitemporal Claim state and
   outstanding liability at an explicit cutoff.
