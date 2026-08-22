@@ -2,12 +2,12 @@
 
 Server-side JavaScript and TypeScript client for the Heyrafiki API.
 
-## Where this fits
+## What this SDK is for
 
-This SDK is the typed JavaScript and TypeScript entrypoint to Heyrafiki's
-versioned REST contract. It helps applications participate in governed Mental
-Healthcare workflows while authorization, Consent, clinical authority and
-financial decisions remain server-owned.
+Use this SDK to call the Heyrafiki API from a JavaScript or TypeScript service.
+It provides typed requests, predictable errors and idempotency support for
+retried writes. The platform applies access rules; clinical and financial
+decisions remain with the accountable people and organizations.
 
 ## Build from source
 
@@ -19,7 +19,7 @@ npm run check
 ```
 
 Node.js 22 or newer is required. The client connects to Sandbox projects with
-the same typed contract, idempotency behavior and request evidence used by the
+the same API behavior, idempotency support and request identifiers used by the
 public REST API. Keep API keys on the server.
 
 Prefer the command line? Build [`hey`](https://github.com/heyrafiki/hey) and run
